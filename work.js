@@ -1,12 +1,15 @@
 const container = document.querySelector(".container");
 
+let inputSizeGrid = 10;
+canvas(inputSizeGrid);
+
 const input = document.querySelector("#gridSize");
 function inputButtonFunction() {
-    let values = document.querySelector("#gridSize").value;
-    console.log(values);
+    let values = document.querySelector("input").value;
     input.value="";
     if(values >=1 && values <= 100){
-        return values;
+        inputSizeGrid = Number(values); // convert to number;
+        return inputSizeGrid;
     }
     else{
         alert("Wrong input, try again");
@@ -14,9 +17,12 @@ function inputButtonFunction() {
 }
 
 const inputButton = document.querySelector("#inputButton");
-inputButton.addEventListener("click", inputButtonFunction);
+inputButton.addEventListener("click", () => {
+    container.textContent = "";
+    inputButtonFunction();
+    canvas(inputSizeGrid);
+});
 
-let inputSizeGrid = 100;
 
 //function that prints the grid
 function canvas(inputNumber) {
@@ -26,12 +32,9 @@ function canvas(inputNumber) {
             let inputSize = 640 / inputNumber;
             grid.setAttribute("style", `width: ${inputSize}px; height: ${inputSize}px`);
             grid.addEventListener("mouseover", () => {
-                grid.setAttribute("style", "background-color: black")
+                grid.style.backgroundColor = "black";
             });    
             container.appendChild(grid);
         }
     }
 }
-
-canvas(inputSizeGrid);
-
