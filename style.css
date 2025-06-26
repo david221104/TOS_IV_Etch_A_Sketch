@@ -18,17 +18,18 @@ body {
 }
 
 .container {
+    padding-top: 80px;
     display: flex;
-    width: 160px;
+    width: 640px;
     height: 100%;
     flex-direction: row;
     flex-wrap: wrap;
+    justify-content: center;
 }
 
 .container div {
     box-sizing: border-box;
     background-color: white;
     border: solid black 1px;
-    width: 10px;
-    height: 10px;
 }
+
