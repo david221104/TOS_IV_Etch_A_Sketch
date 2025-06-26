@@ -18,17 +18,19 @@ body {
 }
 
 .container {
-    padding-top: 80px;
+    margin-top: 70px;
     display: flex;
     width: 640px;
     height: 100%;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
+    background-color: white;
 }
 
 .container div {
-    box-sizing: border-box;
+    box-sizing: border-box; /*border box calculates the border, padding, etc, and squeezing it inside*/
     background-color: white;
-    border: solid black 1px;
+    border: transparent 1px;
+    opacity: 10%;
 }
